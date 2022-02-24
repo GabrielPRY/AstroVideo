@@ -141,16 +141,17 @@ body{
     margin: 0;
 }
 
-.grid-container img{
+.video-container img{
     max-width: 100%;
 }
+
 
 .video-overlay{
     background: rgba(0, 0, 0, 40%);
     position: absolute;
     left: 0;
     top:0;
-    bottom:0;
+    bottom:5px;
     right: 0;
     color: rgba(255, 255, 255, 0.897);
     display: none;
@@ -231,11 +232,11 @@ body{
 
 .tags span{
     color: white;
-    background-color: rebeccapurple;
     margin-right: 10px;
     color: white;
     padding: 0.5em 1em;
-    border-radius: 2rem
+    border-radius: 2rem;
+    background: purple;
 }
 
 .tags span:nth-child(2){
@@ -249,3 +250,80 @@ body{
 .tags span:nth-child(4){
     background: orchid;
 }
+
+.comments-panel h3{
+    margin: 0 1em;
+}
+
+.comment-panel-form{
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.comment-panel-form-fig{
+    width: 45px;
+    height: 45px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    left: 4em;
+    margin: 0 -13px;
+}
+
+.comment-panel-form-fig img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+   
+}
+
+.comment-panel-form-input{
+    padding: 1em 6em;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1em;
+    background: #d6d3d3;
+    border: none;
+}
+
+.comments-panel-list{
+    margin: 1em 2em;
+}
+
+.comments-panel-list-item{
+    display: grid;
+    grid-template-columns:  1fr 10fr;
+    grid-template-areas: "foto nombre"
+                        "foto comentario";
+    margin-bottom: 1em;
+}
+
+.comments-panel-list-fig{
+    grid-area: foto;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0;
+}
+
+.comments-panel-list-fig img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.comments-panel-list-name{
+    grid-area: nombre;
+    color: #6e6b6b;
+    margin: 0;
+}
+
+.comments-panel-list-comment{
+    grid-area: comentario;
+    color: #6e6b6b;
+    margin: 0;
+}
+

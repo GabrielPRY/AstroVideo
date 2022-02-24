@@ -252,7 +252,7 @@ body{
 }
 
 .comments-panel h3{
-    margin: 0 1em;
+    margin: .5em 1em;
 }
 
 .comment-panel-form{
@@ -327,3 +327,19 @@ body{
     margin: 0;
 }
 
+.comments-sugerences h3{
+    margin: .5em 0;
+}
+
+.comments-sugerences-item img{
+    max-width: 60%;
+}
+
+.comments-sugerences-item{
+    color: #6e6b6b;
+    text-decoration: none;
+}
+
+.comments-sugerences-item p{
+    margin-top: 0;
+}

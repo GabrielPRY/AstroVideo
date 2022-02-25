@@ -13,7 +13,9 @@
 </head>
 
 <body>
+    <i class="icon-down slide-button"></i>
     <section class="grid-container">
+
         <div class="side-menu">
             <h1>Astro
                 <span>Video</span>
@@ -188,5 +190,44 @@
         </div>
     </section>
 </body>
+<script>
+    // console.log('Hola mundo! es mi primera linea en JS');
+
+    //resiva que llegue el mediaquery y activa para que no se ejucute codigo al pedo
+    const phone = window.matchMedia('screen and (max-width: 768px)');
+
+    const slidemenu = document.querySelector('.side-menu');
+    //console.log(menu);
+    const slideButton = document.querySelector('.slide-button');
+    // console.log(burgerButton);
+
+
+    //funcion que revisa que se cumpla un evento
+    phone.addListener(validator)
+
+    //cuando se cumple lo de ipad salta el evento y de acuerdo al bool de matches
+    //se activa el menu hamburguesa ya hecho y si no se saca
+    function validator(event) {
+        if (event.matches == true) {
+            slideButton.addEventListener('click', hideShow);
+            console.log(event.matches);
+        } else {
+            slideButton.removeEventListener('click', hideShow);
+            console.log(event.matches);
+        }
+    }
+
+    validator(phone);
+
+    //mestra y saca el menu de movil al clickear la hamburguesa
+    function hideShow() {
+        if (slidemenu.classList.contains('is-active')) {
+            slidemenu.classList.remove('is-active');
+        } else {
+            slidemenu.classList.add('is-active');
+        }
+    }
+
+</script>
 
 </html>

@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:  url('../fonts/icomoon.eot?uujzpe');
-    src:  url('../fonts/icomoon.eot?uujzpe#iefix') format('embedded-opentype'),
-      url('../fonts/icomoon.ttf?uujzpe') format('truetype'),
-      url('../fonts/icomoon.woff?uujzpe') format('woff'),
-      url('../fonts/icomoon.svg?uujzpe#icomoon') format('svg');
+    src:  url('../fonts/icomoon.eot?unww08');
+    src:  url('../fonts/icomoon.eot?unww08#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?unww08') format('truetype'),
+      url('../fonts/icomoon.woff?unww08') format('woff'),
+      url('../fonts/icomoon.svg?unww08#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -28,6 +28,9 @@
   .icon-eye:before {
     content: "\e904";
   }
+  .icon-down:before {
+    content: "\e905";
+  }
   .icon-download:before {
     content: "\e900";
   }
@@ -42,9 +45,24 @@
   }
   
 
+
 body{
     margin: 0;
     font-family: 'Noto Sans', sans-serif;
+}
+
+.slide-button{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    border-radius: 50%;
+    background-color: rebeccapurple;
+    text-align: center;
+    line-height: 40px;
+    display: none;
 }
 
 .grid-container{
@@ -54,7 +72,7 @@ body{
                          "side info"
                         "side comments";
     height: 100vh;
-   
+
 }
 
 .side-menu{
@@ -89,7 +107,7 @@ body{
 .side-menu-playlist-list a{
     text-decoration: none;
     color: white;
-    
+
 }
 
 .side-menu-friends-playlist-list{
@@ -128,13 +146,13 @@ body{
 
 .side-menu-friends-playlist-list-container a{
     text-decoration: none;
-    
+
 }
 
 .video{
     grid-area: video;
     position: relative;
-   
+
 }
 
 .video-container{
@@ -162,7 +180,7 @@ body{
     position: absolute;
     top: 20px;
     left: 20px;
-    
+
 }
 
 .video-overlay .icon-player{
@@ -181,7 +199,7 @@ body{
     grid-area: info;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    
+
 }
 
 .video-info-details{
@@ -225,7 +243,6 @@ body{
 
 .comments{
     grid-area: comments;
-    border: 1px solid rebeccapurple;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -277,7 +294,7 @@ body{
     height: 100%;
     object-fit: cover;
     position: absolute;
-   
+
 }
 
 .comment-panel-form-input{
@@ -342,4 +359,113 @@ body{
 
 .comments-sugerences-item p{
     margin-top: 0;
+}
+
+
+@media screen and (max-width: 1024px) {
+
+
+    .video-info-menu{
+        grid-template: 1fr 1fr / 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+
+    .tags{
+        grid-column:  1/span 4;
+    }
+
+    .video-info-menu-add{
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .side-menu{
+    overflow: hidden;
+    height: 4em;
+    text-align: center;
+    }
+
+    .grid-container{
+        grid-template: 1fr 1fr 1fr 1fr /none;
+        grid-template-areas: "side"
+                            "video"
+                             "info"
+                         "comments";
+    }
+
+    .video-info-menu{
+        grid-template: 1fr 1fr / 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+
+    .tags{
+        grid-column:  1/span 4;
+    }
+
+    .video-info-menu-add{
+        height: 80%;
+    }
+
+    .comments{
+        grid-template-columns: 1fr;
+        padding-left: 10em;
+    }
+
+    .slide-button{
+        display: block;
+    }
+
+    .side-menu.is-active{
+        overflow: initial;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .comments{
+        padding: 0;
+    }
+
+    .comments-sugerences{
+        margin-left: 7em;
+    }
+
+   .tags span{
+       padding: 0.5em;
+   }
+
+   
+.video-overlay .icon-previous{
+    font-size: 2em;
+
+}
+
+.video-overlay .icon-player{
+    font-size: 5em;
+
+}
+}
+
+@media screen and (max-width:320px) {
+    .comments{
+        padding: 0;
+    }
+
+    .comments-sugerences{
+        margin-left: 7em;
+    }
+
+   .tags span{
+       padding: 0.5em;
+   }
+
+   .video-info-menu-add{
+       margin-left: 2em;
+       height: 90%;
+   }
+
+   .comments-panel-list-item{
+       margin-left: 5em;
+   }
 }
